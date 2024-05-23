@@ -3,6 +3,7 @@
 
 #include "LoonyPlayer.h"
 #include "Camera/CameraComponent.h"
+#include "Components/CapsuleComponent.h"
 #include <../Plugins/EnhancedInput/Source/EnhancedInput/Public/EnhancedInputComponent.h>
 #include "GameFramework/SpringArmComponent.h"
 #include "GameFramework/PlayerController.h"
@@ -13,12 +14,13 @@ ALoonyPlayer::ALoonyPlayer()
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
+	//loonyController = CreateDefaultSubobject<APlayerController>(TEXT("loonyController"));
 	cameraComp = CreateDefaultSubobject<UCameraComponent>(TEXT("camerComp"));
 	cameraComp->SetupAttachment(RootComponent);
 	cameraComp->bUsePawnControlRotation = true;
 	springComp = CreateDefaultSubobject<USpringArmComponent>(TEXT("springComp"));
 	springComp->SetupAttachment(RootComponent);
-
+	GetCapsuleComponent()->SetCollisionProfileName(TEXT("PlayerPreset"));
 }
 
 // Called when the game starts or when spawned
