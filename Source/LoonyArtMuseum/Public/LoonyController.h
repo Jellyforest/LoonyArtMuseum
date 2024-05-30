@@ -21,7 +21,9 @@ protected:
 
 	virtual void BeginPlay();
 
-	
+	//±â¹Í¸ðÀ½
+	UFUNCTION()
+	void ChangingFloor();
 
 	
 };

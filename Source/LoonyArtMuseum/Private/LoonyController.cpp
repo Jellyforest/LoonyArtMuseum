@@ -12,3 +12,8 @@ void ALoonyController::BeginPlay()
 {
 
 }
+
+void ALoonyController::ChangingFloor()
+{
+	//GetWorld()->
+}
