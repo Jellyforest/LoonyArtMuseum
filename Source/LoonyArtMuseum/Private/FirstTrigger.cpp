@@ -3,6 +3,7 @@
 
 #include "FirstTrigger.h"
 #include "Components/BoxComponent.h"
+#include "LoonyGameModeBase.h"
 
 
 // Sets default values
@@ -23,6 +24,8 @@ void AFirstTrigger::BeginPlay()
 	
 	boxComp->OnComponentBeginOverlap.AddDynamic(this, &AFirstTrigger::InTrigger);
 	loonyController = Cast<ALoonyController>(GetWorld()->GetFirstPlayerController());
+	loonyGM = Cast<ALoonyGameModeBase>(GetWorld()->GetAuthGameMode());
+
 }
 
 // Called every frame
@@ -36,6 +39,30 @@ void AFirstTrigger::InTrigger(UPrimitiveComponent* OverlappedComponent, AActor* 
 {
 	UE_LOG(LogTemp, Warning, TEXT("dd"));
 
+	Fork();
 	
 
+}
+
+void AFirstTrigger::Fork()
+{
+	
+	//FRandRange
+	forkNum = FMath::RandRange(1, 10);
+	//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::FromInt(forkNum));
+
+	if(forkNum>3)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("4 more"));
+		//바뀌게, 겜모 베이스 함수작동
+		loonyGM->SelectNum();
+
+	}
+	else
+	{
+
+		UE_LOG(LogTemp, Warning, TEXT("4 less"));
+		//안바뀌게 그대로
+
+	}
 }
