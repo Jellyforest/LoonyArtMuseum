@@ -11,7 +11,7 @@
 // Sets default values
 ALoonyPlayer::ALoonyPlayer()
 {
- 	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
 	//loonyController = CreateDefaultSubobject<APlayerController>(TEXT("loonyController"));
@@ -27,7 +27,7 @@ ALoonyPlayer::ALoonyPlayer()
 void ALoonyPlayer::BeginPlay()
 {
 	Super::BeginPlay();
-	
+
 	loonyController = Cast<APlayerController>(GetWorld()->GetFirstPlayerController());
 	if (loonyController)
 	{
