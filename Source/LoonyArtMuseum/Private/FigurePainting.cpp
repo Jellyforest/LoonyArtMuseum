@@ -67,10 +67,10 @@ void AFigurePainting::Grow()
 }
 void AFigurePainting::GrowUp()
 {
-	if (figureX <= 20 )
+	if (figureX <= 15 )
 	{
-		figureX = figureX + 1;
-		figureY = figureY + 1;
+		figureX = figureX + 0.01;
+		figureY = figureY + 0.01;
 		figurePaintingMesh->SetWorldScale3D(FVector(figureX, figureY, 2));
 	}
 	else
