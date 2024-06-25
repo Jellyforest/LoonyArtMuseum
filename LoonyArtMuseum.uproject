@@ -1,25 +1,3 @@
-{
-	"FileVersion": 3,
-	"EngineAssociation": "5.2",
-	"Category": "",
-	"Description": "",
-	"Modules": [
-		{
-			"Name": "LoonyArtMuseum",
-			"Type": "Runtime",
-			"LoadingPhase": "Default",
-			"AdditionalDependencies": [
-				"Engine"
-			]
-		}
-	],
-	"Plugins": [
-		{
-			"Name": "ModelingToolsEditorMode",
-			"Enabled": true,
-			"TargetAllowList": [
-				"Editor"
-			]
-		}
-	]
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:434153bd57d9df715ff6d7ef7fb5cc4c7f38890f2cc34c861bbac3976c5dea87
+size 393

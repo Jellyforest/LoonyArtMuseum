@@ -39,8 +39,8 @@ public:
 	UMaterialInterface* changeMaterial;
 
 	//z는 그대로
-	float figureX = 9;
-	float figureY = 10;
+	float figureX = 5;
+	float figureY = 6;
 	UPROPERTY()
 	FTimerHandle growHandle;
 

@@ -1,0 +1,14 @@
+Saved filter=lfs diff=lfs merge=lfs -text
+Binaries filter=lfs diff=lfs merge=lfs -text
+Config filter=lfs diff=lfs merge=lfs -text
+Content filter=lfs diff=lfs merge=lfs -text
+LoonyArtMuseum.sln filter=lfs diff=lfs merge=lfs -text
+LoonyArtMuseum.uproject filter=lfs diff=lfs merge=lfs -text
+Platforms filter=lfs diff=lfs merge=lfs -text
+Build filter=lfs diff=lfs merge=lfs -text
+DerivedDataCache filter=lfs diff=lfs merge=lfs -text
+Intermediate filter=lfs diff=lfs merge=lfs -text
+Source filter=lfs diff=lfs merge=lfs -text
+*git filter=lfs diff=lfs merge=lfs -text
+track filter=lfs diff=lfs merge=lfs -text
+lfs filter=lfs diff=lfs merge=lfs -text

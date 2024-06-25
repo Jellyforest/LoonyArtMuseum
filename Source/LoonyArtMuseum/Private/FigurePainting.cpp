@@ -14,7 +14,7 @@ AFigurePainting::AFigurePainting()
 
 	figurePaintingMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("figurePaintingMesh"));
 	SetRootComponent(figurePaintingMesh);
-	figurePaintingMesh->SetWorldScale3D(FVector(9, 10, 2));
+	figurePaintingMesh->SetWorldScale3D(FVector(5, 6, 2));
 	figurePaintingComp = CreateDefaultSubobject<UBoxComponent>(TEXT("figurePaintingComp"));
 	figurePaintingComp->SetupAttachment(RootComponent);
 	figureFrame = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("figureFrame"));
@@ -51,10 +51,10 @@ void AFigurePainting::ReturnFigure()
 {
 	// 0번 매테리얼을 되돌린다
 	figurePaintingMesh->SetMaterial(0, originalMaterial);
-	figureX = 9;
-	figureY = 10;
+	figureX = 5;
+	figureY = 6;
 	figurePaintingMesh->SetWorldScale3D(FVector(figureX, figureY, 2));
-
+	GetWorld()->GetTimerManager().ClearTimer(growHandle);
 }
 
 void AFigurePainting::Grow()
@@ -67,10 +67,10 @@ void AFigurePainting::Grow()
 }
 void AFigurePainting::GrowUp()
 {
-	if (figureX <= 20)
+	if (figureX <= 20 )
 	{
-		figureX = figureX + 0.01;
-		figureY = figureY + 0.01;
+		figureX = figureX + 1;
+		figureY = figureY + 1;
 		figurePaintingMesh->SetWorldScale3D(FVector(figureX, figureY, 2));
 	}
 	else
