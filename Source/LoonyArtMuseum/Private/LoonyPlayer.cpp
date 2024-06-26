@@ -14,13 +14,14 @@ ALoonyPlayer::ALoonyPlayer()
 	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
-	//loonyController = CreateDefaultSubobject<APlayerController>(TEXT("loonyController"));
-	cameraComp = CreateDefaultSubobject<UCameraComponent>(TEXT("camerComp"));
-	cameraComp->SetupAttachment(RootComponent);
-	cameraComp->bUsePawnControlRotation = true;
 	springComp = CreateDefaultSubobject<USpringArmComponent>(TEXT("springComp"));
 	springComp->SetupAttachment(RootComponent);
+	springComp->TargetArmLength = 200;
 	GetCapsuleComponent()->SetCollisionProfileName(TEXT("PlayerPreset"));
+	cameraComp = CreateDefaultSubobject<UCameraComponent>(TEXT("camerComp"));
+	cameraComp->SetupAttachment(springComp);
+	cameraComp->bUsePawnControlRotation = true;
+	
 }
 
 // Called when the game starts or when spawned
