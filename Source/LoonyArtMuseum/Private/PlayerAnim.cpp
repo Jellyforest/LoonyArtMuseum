@@ -22,6 +22,9 @@ void UPlayerAnim::NativeUpdateAnimation(float DeltaSeconds)
 		FVector forwardVector = player->GetActorForwardVector();
 		//5. speed의 값 할당
 		playerSpeed = FVector::DotProduct(forwardVector, velocity);
+		//6. 좌우 속도 할당
+		FVector rightVector = player->GetActorRightVector();
+		direction = FVector::DotProduct(rightVector, velocity);
 
 	}
 }

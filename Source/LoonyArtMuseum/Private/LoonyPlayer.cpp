@@ -8,6 +8,8 @@
 #include "GameFramework/SpringArmComponent.h"
 #include "GameFramework/PlayerController.h"
 #include "EnhancedInputSubsystems.h"
+#include "GameFramework/CharacterMovementComponent.h"
+
 // Sets default values
 ALoonyPlayer::ALoonyPlayer()
 {
@@ -30,6 +32,7 @@ void ALoonyPlayer::BeginPlay()
 	Super::BeginPlay();
 
 	loonyController = Cast<APlayerController>(GetWorld()->GetFirstPlayerController());
+
 	if (loonyController)
 	{
 		auto localPlayer = loonyController->GetLocalPlayer();
@@ -39,6 +42,8 @@ void ALoonyPlayer::BeginPlay()
 			Subsystem->AddMappingContext(IMC_LoonyInput, 0);
 		}
 	}
+
+	GetCharacterMovement()->MaxWalkSpeed = walkSpeed;
 
 }
 

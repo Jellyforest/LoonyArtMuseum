@@ -49,6 +49,9 @@ public:
 	//캐릭터
 	UPROPERTY(EditDefaultsOnly, Category = "PlayerMesh")
 	class USkeletalMesh* playerMesh;
+	//걷기 속도
+	UPROPERTY(EditDefaultsOnly, Category = "PlayerSetting")
+	float walkSpeed = 800;
 
 	//동작함수
 	void Move(const FInputActionValue& Values);

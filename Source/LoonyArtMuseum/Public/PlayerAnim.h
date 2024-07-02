@@ -19,6 +19,10 @@ public:
 	//플레이어의 이동속도
 	UPROPERTY(EditDefaultsOnly, BluePrintReadWrite, Category = "playerAnim")
 	float playerSpeed = 0;
+	//플레이어 좌우 이동속도
+	UPROPERTY(EditDefaultsOnly, BluePrintReadWrite, Category = "playerAnim")
+	float direction = 0;
+
 
 	//매프레임 갱신되는 함수
 	virtual void NativeUpdateAnimation(float DeltaSeconds) override;

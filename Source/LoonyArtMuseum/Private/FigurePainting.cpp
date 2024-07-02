@@ -61,7 +61,7 @@ void AFigurePainting::Grow()
 {
 	//figurePaintingMesh->SetWorldScale3D(FVector(figureX, figureY, 20));
 
-	// RepeatingFunction 을 초당 1 회, 지금부터 1 초간 호출합니다.
+	// GrowUp 을 초당 1 회, 지금부터 1 초간 호출합니다.
 	GetWorld()->GetTimerManager().SetTimer(growHandle, this, &AFigurePainting::GrowUp, 1.0f, true, 1.0f);
 
 }
