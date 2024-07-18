@@ -21,3 +21,4 @@ T_angel_Bronze_Nomal.uasset filter=lfs diff=lfs merge=lfs -text
 T_angel_Corroed-Copper_AO_Rough_Metal.uasset filter=lfs diff=lfs merge=lfs -text
 T_angel_Corroded-Copper_BaseColor.uasset filter=lfs diff=lfs merge=lfs -text
 T_angel_Corroded-Copper_Normal.uasset filter=lfs diff=lfs merge=lfs -text
+snow_normal.uasset filter=lfs diff=lfs merge=lfs -text
