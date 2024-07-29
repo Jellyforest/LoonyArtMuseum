@@ -24,6 +24,7 @@ ALoonyPlayer::ALoonyPlayer()
 	cameraComp->SetupAttachment(springComp);
 	cameraComp->bUsePawnControlRotation = true;
 	
+	
 }
 
 // Called when the game starts or when spawned
