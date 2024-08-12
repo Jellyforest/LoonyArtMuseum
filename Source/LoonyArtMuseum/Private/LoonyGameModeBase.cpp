@@ -18,7 +18,7 @@ void ALoonyGameModeBase::SelectNum()
 
 	//mainNum = FMath::RandRange(1, 25);
 	//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::FromInt(mainNum));
-
+/*	
 	if (numArray.Num() == 0)
 	{
 		mainNum = FMath::RandRange(1, 25);
@@ -96,10 +96,11 @@ void ALoonyGameModeBase::SelectNum()
 					numArray.Add(mainNum);
 
 				}
-				*/
+				
 		}
-
+		
 	}
+	*/
 
 	/*
 	for (int32 i = 0; i <= numArray.Num(); i++)

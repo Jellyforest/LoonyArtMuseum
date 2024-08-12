@@ -28,7 +28,7 @@ public:
 	UPROPERTY()
 	int32 b =0;
 	//숫자 넣을 배열
-	TArray <int32> numArray;
+	//TArray <int32> numArray;
 
 	//숫자 뽑기
 	UFUNCTION()
