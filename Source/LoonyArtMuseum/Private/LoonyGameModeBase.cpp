@@ -69,7 +69,7 @@ void ALoonyGameModeBase::SelectNum()
 
 			//	a++;
 
-				/*
+				
 				if (mainNum == b)
 				{
 					UE_LOG(LogTemp, Warning, TEXT("same"));
@@ -80,8 +80,7 @@ void ALoonyGameModeBase::SelectNum()
 					UE_LOG(LogTemp, Warning, TEXT("different"));
 
 				}
-				*/
-				/*
+				
 				a = numArray[i];
 
 				if (mainNum == a)

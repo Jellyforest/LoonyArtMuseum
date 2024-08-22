@@ -23,4 +23,23 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+	UPROPERTY(EditAnyWhere, Category = "Fruit")
+	UStaticMeshComponent* fruitMesh;
+	UPROPERTY(EditAnyWhere, Category = "Fruit")
+	class USphereComponent* fruitComp;
+
+	//과일 구르는 시간
+	UPROPERTY()
+	FTimerHandle tumbleHandle;
+	//roll
+	UPROPERTY()
+	float roll = -100;
+	float yLocation = -3246;
+	float statueSize = 4;
+	UFUNCTION()
+	void Tumble();
+	UFUNCTION(BlueprintCallable)
+	void Rolling();
+
+
 };
