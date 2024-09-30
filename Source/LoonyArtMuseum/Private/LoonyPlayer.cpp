@@ -73,14 +73,14 @@ void ALoonyPlayer::SetupPlayerInputComponent(UInputComponent* PlayerInputCompone
 
 void ALoonyPlayer::Move(const FInputActionValue& Values)
 {
-	FVector2D axis = Values.Get<FVector2D>();
+	axis = Values.Get<FVector2D>();
 	AddMovementInput(GetActorForwardVector(), axis.X);
 	AddMovementInput(GetActorRightVector(), axis.Y);
 }
 
 void ALoonyPlayer::Look(const FInputActionValue& Values)
 {
-	FVector2D axis = Values.Get<FVector2D>();
+	axis = Values.Get<FVector2D>();
 	AddControllerYawInput(axis.X);
 	AddControllerPitchInput(axis.Y);
 }

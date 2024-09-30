@@ -2,10 +2,21 @@
 
 
 #include "LoonyGameModeBase.h"
+#include "CicadaMan.h"
+#include "MovingStatue.h"
+#include "FallingFrame.h"
+#include "Fruits.h"
+#include "Barricade.h"
+#include <Kismet/GameplayStatics.h>
+
 
 ALoonyGameModeBase::ALoonyGameModeBase()
 {
-
+	cicadaMan = Cast<ACicadaMan>(UGameplayStatics::GetActorOfClass(GetWorld(), ACicadaMan::StaticClass()));
+	movingStatue = Cast<AMovingStatue>(UGameplayStatics::GetActorOfClass(GetWorld(), AMovingStatue::StaticClass()));
+	fallingFrame = Cast<AFallingFrame>(UGameplayStatics::GetActorOfClass(GetWorld(), AFallingFrame::StaticClass()));
+	fruits = Cast<AFruits>(UGameplayStatics::GetActorOfClass(GetWorld(), AFruits::StaticClass()));
+	barricade = Cast<ABarricade>(UGameplayStatics::GetActorOfClass(GetWorld(), ABarricade::StaticClass()));
 }
 
 void ALoonyGameModeBase::BeginPlay()
@@ -16,9 +27,35 @@ void ALoonyGameModeBase::BeginPlay()
 void ALoonyGameModeBase::SelectNum()
 {
 
-	//mainNum = FMath::RandRange(1, 25);
-	//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::FromInt(mainNum));
+	mainNum = FMath::RandRange(1, 6);
+	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::FromInt(mainNum));
+
+	if (mainNum == 1)
+	{
+		cicadaMan->ChangeAnim();
+	}
+	else if (mainNum == 2)
+	{
+		movingStatue->Rolling();
+	}
+	else if (mainNum == 3)
+	{
+		fallingFrame->SetFalling();
+	}
+	else if (mainNum == 4)
+	{
+		fruits->BiteTimer();
+	}
+	else if (mainNum == 5)
+	{
+		barricade->RemoveLine();
+	}
+	else
+	{
+
+	}
 /*	
+
 	if (numArray.Num() == 0)
 	{
 		mainNum = FMath::RandRange(1, 25);

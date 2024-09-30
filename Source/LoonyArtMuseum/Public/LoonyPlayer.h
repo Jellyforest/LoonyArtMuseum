@@ -42,7 +42,7 @@ public:
 	class UInputAction* IA_TouchLook;
 
 	//카메라
-	UPROPERTY(EditDefaultsOnly, Category = "PlayerCamera")
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "PlayerCamera")
 	class UCameraComponent* cameraComp;
 	UPROPERTY(EditDefaultsOnly, Category = "PlayerCamera")
 	class USpringArmComponent* springComp;
@@ -52,6 +52,9 @@ public:
 	//걷기 속도
 	UPROPERTY(EditDefaultsOnly, Category = "PlayerSetting")
 	float walkSpeed = 800;
+	
+	UPROPERTY(EditDefaultsOnly,BlueprintReadWrite)
+	FVector2D axis;
 
 	//동작함수
 	void Move(const FInputActionValue& Values);

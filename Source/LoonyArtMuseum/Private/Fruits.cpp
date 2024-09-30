@@ -63,6 +63,7 @@ void AFruits::Bite()
 	else if(biteTime > 43)
 	{
 		GetWorld()->GetTimerManager().ClearTimer(biteHandle);
+		biteTime = 0;
 	}
 	
 }

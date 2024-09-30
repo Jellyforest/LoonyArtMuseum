@@ -4,16 +4,16 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "Frame.generated.h"
+#include "Following.generated.h"
 
 UCLASS()
-class LOONYARTMUSEUM_API AFrame : public AActor
+class LOONYARTMUSEUM_API AFollowing : public AActor
 {
 	GENERATED_BODY()
 	
 public:	
 	// Sets default values for this actor's properties
-	AFrame();
+	AFollowing();
 
 protected:
 	// Called when the game starts or when spawned
@@ -22,12 +22,5 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-
-	UPROPERTY(EditAnyWhere, Category = "Frame")
-	UStaticMeshComponent* frameMesh;
-	UPROPERTY(EditAnyWhere, Category = "Frame")
-	class UBoxComponent* frameComp;
-
-	
 
 };

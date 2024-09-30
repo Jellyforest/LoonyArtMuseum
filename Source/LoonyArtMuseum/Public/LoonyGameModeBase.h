@@ -30,12 +30,24 @@ public:
 	//숫자 넣을 배열
 	//TArray <int32> numArray;
 
+	//액터
+	UPROPERTY()
+	class ACicadaMan* cicadaMan; 
+	UPROPERTY()
+	class AMovingStatue* movingStatue;
+	UPROPERTY()
+	class AFallingFrame* fallingFrame;
+	UPROPERTY()
+	class AFruits* fruits;
+	UPROPERTY()
+	class ABarricade* barricade;
 	//숫자 뽑기
 	UFUNCTION()
 	void SelectNum();
 
 	//기믹함수
 
+	
 
 
 };

@@ -4,17 +4,16 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "Frame.h"
-#include "FallingFrame.generated.h"
+#include "Barricade.generated.h"
 
 UCLASS()
-class LOONYARTMUSEUM_API AFallingFrame : public AActor
+class LOONYARTMUSEUM_API ABarricade : public AActor
 {
 	GENERATED_BODY()
 	
 public:	
 	// Sets default values for this actor's properties
-	AFallingFrame();
+	ABarricade();
 
 protected:
 	// Called when the game starts or when spawned
@@ -24,20 +23,17 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	UPROPERTY(EditAnywhere, Category = "SpawnerSetting")
-	TSubclassOf <AFrame> frame;
-	UPROPERTY(EditAnywhere,BlueprintReadWrite, Category = "SpawnerSetting")
-	class UArrowComponent* arrow;
-	
-	//스폰되는시간
-	UPROPERTY()
-	FTimerHandle spawnHandle;
-	UPROPERTY()
-	float spawnTime;
+
+	UPROPERTY(EditDefaultsOnly, Category = "barricade")
+	class UStaticMeshComponent* barricadeMesh_0;
+	UPROPERTY(EditDefaultsOnly, Category = "barricade")
+	class UStaticMeshComponent* barricadeMesh_1;
+	UPROPERTY(EditDefaultsOnly, Category = "barricade")
+	class UStaticMeshComponent* barricadeLine;
+
 
 	UFUNCTION(BlueprintCallable)
-	void SetFalling();
+	void RemoveLine();
 	UFUNCTION(BlueprintCallable)
-	void Falling();
-	
+	void ReturnLine();
 };

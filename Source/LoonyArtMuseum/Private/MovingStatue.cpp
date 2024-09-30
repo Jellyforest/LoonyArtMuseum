@@ -48,7 +48,7 @@ void AMovingStatue::Tumble()
 	{
 		roll = roll - 10;
 		fruitMesh->SetWorldRotation(FRotator(-10.0f, 0.0f,roll));
-		yLocation = yLocation - 10;
+		yLocation = yLocation - 20;
 		fruitComp->SetWorldLocation(FVector(674.0f,yLocation, 820));
 		statueSize = statueSize + 0.06;
 		fruitComp->SetWorldScale3D(FVector(statueSize));

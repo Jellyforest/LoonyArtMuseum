@@ -14,8 +14,8 @@ AFrame::AFrame()
 	frameMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("frameMesh"));
 	frameComp = CreateDefaultSubobject<UBoxComponent>(TEXT("frameComp"));
 	frameComp->SetWorldScale3D(FVector(2));
-	//SetRootComponent(frameComp);
-	//frameMesh->SetupAttachment(RootComponent);
+	SetRootComponent(frameComp);
+	frameMesh->SetupAttachment(RootComponent);
 
 }
 
