@@ -47,8 +47,8 @@ public:
 	UPROPERTY(EditDefaultsOnly, Category = "PlayerCamera")
 	class USpringArmComponent* springComp;
 	//캐릭터
-	UPROPERTY(EditDefaultsOnly, Category = "PlayerMesh")
-	class USkeletalMesh* playerMesh;
+	//UPROPERTY(EditDefaultsOnly, Category = "PlayerMesh")
+	//class USkeletalMesh* playerMesh;
 	//걷기 속도
 	UPROPERTY(EditDefaultsOnly, Category = "PlayerSetting")
 	float walkSpeed = 800;

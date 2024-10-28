@@ -8,7 +8,7 @@
 #include "Fruits.h"
 #include "Barricade.h"
 #include <Kismet/GameplayStatics.h>
-
+#include "OnlineSubsystem.h"
 
 ALoonyGameModeBase::ALoonyGameModeBase()
 {
@@ -17,11 +17,40 @@ ALoonyGameModeBase::ALoonyGameModeBase()
 	fallingFrame = Cast<AFallingFrame>(UGameplayStatics::GetActorOfClass(GetWorld(), AFallingFrame::StaticClass()));
 	fruits = Cast<AFruits>(UGameplayStatics::GetActorOfClass(GetWorld(), AFruits::StaticClass()));
 	barricade = Cast<ABarricade>(UGameplayStatics::GetActorOfClass(GetWorld(), ABarricade::StaticClass()));
+
 }
 
 void ALoonyGameModeBase::BeginPlay()
 {
 	//scoreWidgetActor = Cast<AScoreWidgetActor>(UGameplayStatics::GetActorOfClass(GetWorld(), AScoreWidgetActor::StaticClass()));
+	GetOnlineSession();
+
+}
+
+void ALoonyGameModeBase::GetOnlineSession()
+{
+	// OnlineSubsystem에 Access
+	IOnlineSubsystem* OnlineSubsystem = IOnlineSubsystem::Get();
+
+	if (OnlineSubsystem)
+	{
+		// 온라인 세션 받아오기
+		onlineSessionInterface = OnlineSubsystem->GetSessionInterface();
+
+		// 로그를 출력해서 확인합니다.
+		OnlineSubsystem->GetSubsystemName().ToString();
+		if (GEngine)
+		{
+			GEngine->AddOnScreenDebugMessage(
+				-1,
+				15.f,
+				FColor::Blue,
+				FString::Printf(TEXT("Found subsystem %s"), *OnlineSubsystem->GetSubsystemName().ToString())
+			);
+		}
+
+
+	}
 }
 
 void ALoonyGameModeBase::SelectNum()

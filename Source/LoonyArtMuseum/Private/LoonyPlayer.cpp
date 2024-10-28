@@ -23,6 +23,7 @@ ALoonyPlayer::ALoonyPlayer()
 	cameraComp = CreateDefaultSubobject<UCameraComponent>(TEXT("camerComp"));
 	cameraComp->SetupAttachment(springComp);
 	cameraComp->bUsePawnControlRotation = true;
+	ConstructorHelpers::FObjectFinder<USkeletalMesh> playerMesh(TEXT("/ Script / Engine.SkeletalMesh'/Game/JY/LoonyCharacter/Ch22_nonPBR_UE.Ch22_nonPBR_UE'"));
 	
 	
 }

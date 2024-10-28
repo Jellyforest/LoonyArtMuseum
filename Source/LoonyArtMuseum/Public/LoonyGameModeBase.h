@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/GameModeBase.h"
+#include "Interfaces/OnlineSessionInterface.h"
 #include "LoonyGameModeBase.generated.h"
 
 /**
@@ -18,7 +19,13 @@ protected:
 	virtual void BeginPlay() override;
 
 	ALoonyGameModeBase();
-	
+	// 온라인 세션을 가져옵니다.
+	void GetOnlineSession();
+
+private:
+	// 세션의 인터페이스를 참조합니다.
+	IOnlineSessionPtr onlineSessionInterface;
+
 public:
 
 	UPROPERTY()
